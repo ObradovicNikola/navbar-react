@@ -1,0 +1,148 @@
+nav {
+    background: #222222;
+    color: white;
+    width: 100vw;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    box-shadow: 0 4px 2px -2px rgb(175, 175, 175);
+    position: relative;
+}
+
+.logo{
+    margin: auto;
+    padding: 10px;
+}
+
+nav .menu {
+    margin: auto;
+    padding: 10px;
+}
+
+nav .menu li{
+    list-style: none;
+    display: inline;
+    margin: 10px;
+    padding: 5px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: unset;
+    padding: 5px;
+}
+
+.logo .nav-link {
+    display: flex;
+    padding: 10px;
+}
+
+.logo img {
+    margin: auto;
+    margin-right: 20px;
+}
+nav .menu li .nav-link{
+    position: relative;
+}
+// nav .menu li .nav-link:before,
+nav .menu li .nav-link:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: rgb(255,192,0);
+    background: radial-gradient(circle, rgba(255,192,0,1) 0%, rgba(255,0,0,1) 100%);
+    left: 0;
+    transform: scaleX(0);
+    transition: all .5s;
+}
+
+// nav .menu li .nav-link::before {
+//     top: 100;
+//     transform-origin: center;
+// }
+
+nav .menu li .nav-link::after {
+    bottom: 0;
+    transform-origin: center;
+}
+
+nav .menu li .nav-link:hover::before,
+nav .menu li .nav-link:hover::after {
+    transform: scaleX(1);
+}
+
+.burger {
+    margin: auto;
+    display: none;
+}
+
+.fa-bars{
+    font-size: 2rem;
+}
+
+
+@media only screen and (max-width: 560px){
+    nav .menu {
+        padding-top: 0;
+        display: none;
+    }
+
+    nav .menu-mobile {
+    background: #222222;
+        width: 100vw;
+        display: block;
+        position: absolute;
+        top: 100%;
+    }
+    .burger {
+        display: block;
+    }
+
+    nav {
+        display: block;
+        padding: 0;
+    }
+
+    nav .menu li {
+        display: block;
+        margin: 0;
+        text-align: center;
+    }
+
+    nav .menu li .nav-link {
+        display: block;
+        margin-bottom: 10px;
+        border-top: 2px solid rgb(61, 61, 61);
+    }
+    nav .menu li .nav-link:after {
+        display: none;
+    }
+}
+
+.animated {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+  }
+
+@keyframes fadeInDown {
+from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+}
+
+to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+}
+
+.fadeInDown {
+-webkit-animation-name: fadeInDown;
+animation-name: fadeInDown;
+}
