@@ -14,6 +14,8 @@ nav {
   -webkit-box-shadow: 0 4px 2px -2px #afafaf;
           box-shadow: 0 4px 2px -2px #afafaf;
   position: relative;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .logo {
@@ -22,8 +24,8 @@ nav {
 }
 
 nav .menu {
-  margin: auto;
   padding: 10px;
+  margin: auto 10px auto auto;
 }
 
 nav .menu li {
@@ -90,7 +92,7 @@ nav .menu li .nav-link:hover::after {
   font-size: 2rem;
 }
 
-@media only screen and (max-width: 560px) {
+@media only screen and (max-width: 715px) {
   nav .menu {
     padding-top: 0;
     display: none;
