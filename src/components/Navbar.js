@@ -7,7 +7,7 @@ export default class Navbar extends Component {
 
         this.state = {
             mobileMenuShow: false,
-            unhover: ''
+            unhover: '',
         }
     }
 
@@ -29,7 +29,7 @@ export default class Navbar extends Component {
     }
 
     closeMenu = () => {
-        this.navClicked(this.navCleaned)
+        setTimeout(this.navClicked(this.navCleaned), 300)
         this.setState({ mobileMenuShow: false })
     }
 
@@ -55,8 +55,8 @@ export default class Navbar extends Component {
                     <ul className={menu}>
                         <li className={this.state.unhover}>
                             <div className="nav-dropdown">HOME <i className="fas fa-caret-down"></i></div>
-                            <div className="sub-transit">
-                                <ul className="sub-menu-home" >
+                            <div className="sub-menu-container">
+                                <ul>
                                     <li>
                                         <NavLink to="/" exact={true} className="nav-link" activeClassName='is-active' onClick={this.closeMenu}>HOME 1</NavLink>
                                     </li>
@@ -68,33 +68,19 @@ export default class Navbar extends Component {
                         </li>
                         <li className={this.state.unhover}>
                             <div className="nav-dropdown">MENU <i className="fas fa-caret-down"></i></div>
-                            <ul className="sub-menu-menu">
-                                <li>
-                                    <NavLink to="/menu" activeClassName='is-active' className="nav-link" onClick={this.closeMenu}>MENU 1</NavLink>
-                                </li>
-                                <li className={this.state.unhover}>
-                                    <div to="/menu" className="nav-dropdown">MENU 2 <i className="fas fa-caret-right"></i></div>
-                                    <div className="sub-sub-transit">
-                                        <ul className="sub-sub-menu-menu">
-                                            <li>
-                                                <NavLink to="/menu" activeClassName='is-active' className="nav-link" onClick={this.closeMenu}>SPRING</NavLink>
-                                            </li>
-                                            <li>
-                                                <NavLink to="/menu" activeClassName='is-active' className="nav-link" onClick={this.closeMenu}>SUMMER</NavLink>
-                                            </li>
-                                            <li>
-                                                <NavLink to="/menu" activeClassName='is-active' className="nav-link" onClick={this.closeMenu}>AUTUMN</NavLink>
-                                            </li>
-                                            <li>
-                                                <NavLink to="/menu" activeClassName='is-active' className="nav-link" onClick={this.closeMenu}>WINTER</NavLink>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </li>
-                                <li>
-                                    <NavLink to="/menu" activeClassName='is-active' className="nav-link" onClick={this.closeMenu}>MENU 3</NavLink>
-                                </li>
-                            </ul>
+                            <div className="sub-menu-container">
+                                <ul>
+                                    <li>
+                                        <NavLink to="/menu" activeClassName='is-active' className="nav-link" onClick={this.closeMenu}>MENU 1</NavLink>
+                                    </li>
+                                    <li >
+                                        <NavLink to="/menu" activeClassName='is-active' className="nav-link" onClick={this.closeMenu}>MENU 2</NavLink>
+                                    </li>
+                                    <li>
+                                        <NavLink to="/menu" activeClassName='is-active' className="nav-link" onClick={this.closeMenu}>MENU 3</NavLink>
+                                    </li>
+                                </ul>
+                            </div>
                         </li>
                         <li>
                             <NavLink to="/contact" className="nav-link" activeClassName='is-active' onClick={this.closeMenu}>CONTACT</NavLink>
