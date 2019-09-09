@@ -22,7 +22,6 @@ export default class Navbar extends Component {
         this.setState({
             unhover: ''
         })
-        console.log('nav cleaned')
     }
 
     toggleMenu = () => {
@@ -44,7 +43,7 @@ export default class Navbar extends Component {
                 <div className="logo-container" style={{}}>
                     <div className="logo" id="logo">
                         <NavLink to="/" className="nav-link" onClick={this.closeMenu}>
-                            <img src={`${process.env.PUBLIC_URL}/images/phoenixLogo.png`} width="50" height="50" alt="logo" />
+                            <img src={`${process.env.PUBLIC_URL}/images/phoenixLogo.png`} width="50" height="43" alt="logo" />
                             <p>Restaurant Phoenix</p>
                         </NavLink>
                     </div>
@@ -73,22 +72,24 @@ export default class Navbar extends Component {
                                 <li>
                                     <NavLink to="/menu" activeClassName='is-active' className="nav-link" onClick={this.closeMenu}>MENU 1</NavLink>
                                 </li>
-                                <li>
+                                <li className={this.state.unhover}>
                                     <div to="/menu" className="nav-dropdown">MENU 2 <i className="fas fa-caret-right"></i></div>
-                                    <ul className="sub-sub-menu-menu">
-                                        <li>
-                                            <NavLink to="/menu" activeClassName='is-active' className="nav-link" onClick={this.closeMenu}>SPRING</NavLink>
-                                        </li>
-                                        <li>
-                                            <NavLink to="/menu" activeClassName='is-active' className="nav-link" onClick={this.closeMenu}>SUMMER</NavLink>
-                                        </li>
-                                        <li>
-                                            <NavLink to="/menu" activeClassName='is-active' className="nav-link" onClick={this.closeMenu}>AUTUMN</NavLink>
-                                        </li>
-                                        <li>
-                                            <NavLink to="/menu" activeClassName='is-active' className="nav-link" onClick={this.closeMenu}>WINTER</NavLink>
-                                        </li>
-                                    </ul>
+                                    <div className="sub-sub-transit">
+                                        <ul className="sub-sub-menu-menu">
+                                            <li>
+                                                <NavLink to="/menu" activeClassName='is-active' className="nav-link" onClick={this.closeMenu}>SPRING</NavLink>
+                                            </li>
+                                            <li>
+                                                <NavLink to="/menu" activeClassName='is-active' className="nav-link" onClick={this.closeMenu}>SUMMER</NavLink>
+                                            </li>
+                                            <li>
+                                                <NavLink to="/menu" activeClassName='is-active' className="nav-link" onClick={this.closeMenu}>AUTUMN</NavLink>
+                                            </li>
+                                            <li>
+                                                <NavLink to="/menu" activeClassName='is-active' className="nav-link" onClick={this.closeMenu}>WINTER</NavLink>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </li>
                                 <li>
                                     <NavLink to="/menu" activeClassName='is-active' className="nav-link" onClick={this.closeMenu}>MENU 3</NavLink>
