@@ -51,7 +51,7 @@ export default class Navbar extends Component {
             <nav id="navigation">
                 <div className="logo-container" style={{}}>
                     <div className="logo" id="logo">
-                        <NavLink to="/" className="nav-link" onClick={this.closeMenu}>
+                        <NavLink to="/react-navbar-hover" className="nav-link" onClick={this.closeMenu}>
                             <img src={`${process.env.PUBLIC_URL}/images/phoenixLogo.png`} width="50" height="43" alt="logo" />
                             <p>Restaurant Phoenix</p>
                         </NavLink>
