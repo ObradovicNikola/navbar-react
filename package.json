@@ -2,6 +2,7 @@
   "name": "restaurant-phoenix",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://obradovicnikola.github.io/react-navbar-hover",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.10.2",
     "react": "^16.9.0",

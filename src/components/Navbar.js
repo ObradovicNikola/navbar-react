@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import './componentsStyles/Navbar.css'
 import { NavLink } from 'react-router-dom'
+// for performance boost and convenience
+// extends PureComponent instead shouldComponentUpdate
 export default class Navbar extends Component {
     constructor() {
         super()
@@ -11,11 +13,18 @@ export default class Navbar extends Component {
         }
     }
 
+    shouldComponentUpdate(nextProps, nextState) {
+        if (this.state.mobileMenuShow !== nextState.mobileMenuShow) {
+            return true;
+        }
+        return false;
+    }
+
     navClicked = (navCleaned) => {
         this.setState({
             unhover: 'no-hover'
         })
-        setTimeout(navCleaned, 500);
+        setTimeout(navCleaned, 40);
     }
 
     navCleaned = () => {
@@ -58,10 +67,10 @@ export default class Navbar extends Component {
                             <div className="sub-menu-container">
                                 <ul>
                                     <li>
-                                        <NavLink to="/" exact={true} className="nav-link" activeClassName='is-active' onClick={this.closeMenu}>HOME 1</NavLink>
+                                        <NavLink to="/react-navbar-hover" exact={true} className="nav-link" activeClassName='is-active' onClick={this.closeMenu}>HOME 1</NavLink>
                                     </li>
                                     <li>
-                                        <NavLink to="/" exact={true} className="nav-link" activeClassName='is-active' onClick={this.closeMenu}>HOME 2</NavLink>
+                                        <NavLink to="/react-navbar-hover" exact={true} className="nav-link" activeClassName='is-active' onClick={this.closeMenu}>HOME 2</NavLink>
                                     </li>
                                 </ul>
                             </div>
@@ -71,22 +80,22 @@ export default class Navbar extends Component {
                             <div className="sub-menu-container">
                                 <ul>
                                     <li>
-                                        <NavLink to="/menu" activeClassName='is-active' className="nav-link" onClick={this.closeMenu}>MENU 1</NavLink>
+                                        <NavLink to="/react-navbar-hover/menu" activeClassName='is-active' className="nav-link" onClick={this.closeMenu}>MENU 1</NavLink>
                                     </li>
                                     <li >
-                                        <NavLink to="/menu" activeClassName='is-active' className="nav-link" onClick={this.closeMenu}>MENU 2</NavLink>
+                                        <NavLink to="/react-navbar-hover/menu" activeClassName='is-active' className="nav-link" onClick={this.closeMenu}>MENU 2</NavLink>
                                     </li>
                                     <li>
-                                        <NavLink to="/menu" activeClassName='is-active' className="nav-link" onClick={this.closeMenu}>MENU 3</NavLink>
+                                        <NavLink to="/react-navbar-hover/menu" activeClassName='is-active' className="nav-link" onClick={this.closeMenu}>MENU 3</NavLink>
                                     </li>
                                 </ul>
                             </div>
                         </li>
                         <li>
-                            <NavLink to="/contact" className="nav-link" activeClassName='is-active' onClick={this.closeMenu}>CONTACT</NavLink>
+                            <NavLink to="/react-navbar-hover/contact" className="nav-link" activeClassName='is-active' onClick={this.closeMenu}>CONTACT</NavLink>
                         </li>
                         <li>
-                            <NavLink to="/about" className="nav-link" activeClassName='is-active' onClick={this.closeMenu}>ABOUT</NavLink>
+                            <NavLink to="/react-navbar-hover/about" className="nav-link" activeClassName='is-active' onClick={this.closeMenu}>ABOUT</NavLink>
                         </li>
                     </ul>
                 </div>

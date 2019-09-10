@@ -16,11 +16,10 @@ function App() {
       <BrowserRouter>
         <Navbar />
         <Switch>
-          {/* path="/restaurant-phoenix/" */}
-          <Route exact path="/" component={Home}></Route>
-          <Route path="/menu" component={Menu}></Route>
-          <Route path="/contact" component={Contact}></Route>
-          <Route path="/about" component={About}></Route>
+          <Route exact path="/react-navbar-hover" component={Home}></Route>
+          <Route path="/react-navbar-hover/menu" component={Menu}></Route>
+          <Route path="/react-navbar-hover/contact" component={Contact}></Route>
+          <Route path="/react-navbar-hover/about" component={About}></Route>
           <Route component={Default}></Route>
         </Switch>
       </BrowserRouter>
